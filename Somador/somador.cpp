@@ -17,11 +17,11 @@ public:
     }
 
     void acquire() {
-        while (flag_.test_and_set(std::memory_order_acquire));
+        while (flag_.test_and_set());
     }
 
     void release() {
-        flag_.clear(std::memory_order_release);
+        flag_.clear();
     }
 
 private:
